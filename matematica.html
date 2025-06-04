@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estatística para o 9º Ano: Aprenda e Pratique</title>
+    <title>Estatística e Probabilidade para o 9º Ano: Aprenda e Pratique</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -20,7 +20,7 @@
             transition: max-height 0.5s ease-out;
         }
         .accordion-button.open + .accordion-content {
-            max-height: 1500px; /* Increased max-height for potentially longer content */
+            max-height: 1800px; /* Increased max-height for potentially longer content */
         }
         .quiz-option:disabled {
             cursor: not-allowed;
@@ -64,16 +64,25 @@
         }
     </style>
     <!-- Chosen Palette: Warm Neutrals with Sky Blue accent (Consistent with previous apps) -->
-    <!-- Application Structure Plan: Two-section SPA. 'Aprender' section uses an accordion for step-by-step explanations of basic statistical concepts relevant to 9th grade (definitions, population/sample, variable types, central tendency - mean/median/mode, dispersion - amplitude, basic data representation). 'Praticar' section is an interactive quiz with immediate feedback and score tracking. This structure separates learning from application, aiding comprehension and retention. Navigation is via two main buttons. -->
-    <!-- Visualization & Content Choices: Report Info: Simplified statistical concepts and examples for 9th grade -> Goal: Inform/Organize -> Viz/Presentation: Accordion in 'Aprender'. Interaction: Expand/collapse. Justification: Breaks down information into digestible steps suitable for the age group. Report Info: Age-appropriate statistical problems & solutions -> Goal: Test knowledge/Compare -> Viz/Presentation: Interactive quiz in 'Praticar'. Interaction: Clickable answers, feedback, score. Justification: Active learning, immediate reinforcement. Library/Method: Vanilla JS & Tailwind CSS. Content presented as styled text. -->
+    <!-- Application Structure Plan: Two-section SPA. 'Aprender' section uses an accordion for step-by-step explanations of basic statistical and probability concepts relevant to 9th grade. 'Praticar' section is an interactive quiz with immediate feedback and score tracking. This structure separates learning from application, aiding comprehension and retention. Navigation is via two main buttons. -->
+    <!-- Visualization & Content Choices: Report Info: Simplified statistical concepts, probability basics, and examples for 9th grade -> Goal: Inform/Organize -> Viz/Presentation: Accordion in 'Aprender'. Interaction: Expand/collapse. Justification: Breaks down information into digestible steps suitable for the age group. Report Info: Age-appropriate statistical and probability problems & solutions -> Goal: Test knowledge/Compare -> Viz/Presentation: Interactive quiz in 'Praticar'. Interaction: Clickable answers, feedback, score. Justification: Active learning, immediate reinforcement. Library/Method: Vanilla JS & Tailwind CSS. Content presented as styled text. -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 </head>
 <body class="bg-stone-100 text-slate-800">
+    <div class="container mx-auto max-w-4xl p-4 sm:p-8">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl sm:text-4xl font-bold text-sky-800">Equações de Primeiro Grau com Frações</h1>
+            <p class="text-slate-600 mt-2">Aprenda a resolver e pratique com exercícios interativos.</p>
+            <div class="flex flex-col sm:flex-row gap-2 justify-center mt-4">
+                <a href="index.html" class="inline-block px-6 py-2 bg-stone-400 text-white font-semibold rounded-lg shadow hover:bg-stone-500 transition-colors">
+                    ⬅ Voltar para o Início
+                </a>
+            </div>
 
     <div class="container mx-auto max-w-4xl p-4 sm:p-8">
         <header class="text-center mb-8">
-            <h1 class="text-3xl sm:text-4xl font-bold text-sky-800">Estatística para o 9º Ano</h1>
-            <p class="text-slate-600 mt-2">Descubra o mundo dos dados de forma fácil e divertida!</p>
+            <h1 class="text-3xl sm:text-4xl font-bold text-sky-800">Estatística e Probabilidade para o 9º Ano</h1>
+            <p class="text-slate-600 mt-2">Descubra o mundo dos dados e das chances de forma fácil e divertida!</p>
         </header>
 
         <nav class="flex justify-center mb-8 bg-white p-2 rounded-lg shadow-sm">
@@ -84,8 +93,8 @@
         <main>
             <section id="learn-section">
                 <div class="bg-white p-6 rounded-lg shadow">
-                    <h2 class="text-2xl font-bold mb-4 text-sky-700">Entendendo a Estatística</h2>
-                    <p class="mb-6 content-text">A estatística está em todo lugar! Ela nos ajuda a entender informações sobre jogos, pesquisas, notas da escola e muito mais. Vamos explorar os principais conceitos de um jeito simples.</p>
+                    <h2 class="text-2xl font-bold mb-4 text-sky-700">Entendendo a Estatística e a Probabilidade</h2>
+                    <p class="mb-6 content-text">A estatística e a probabilidade estão em todo lugar! Elas nos ajudam a entender informações sobre jogos, pesquisas, notas da escola, chances de algo acontecer e muito mais. Vamos explorar os principais conceitos de um jeito simples.</p>
                     
                     <div id="accordion-container" class="space-y-3">
                     </div>
@@ -93,10 +102,11 @@
                     <div class="mt-6 p-4 bg-sky-50 border border-sky-200 rounded-lg">
                         <h3 class="font-bold text-lg text-sky-800">💡 Fique Ligado!</h3>
                         <ul class="list-disc list-inside mt-2 space-y-1 text-slate-700 content-text">
-                            <li><strong class="font-semibold">Contexto é chave:</strong> Sempre pense sobre o que os números significam na vida real.</li>
+                            <li><strong class="font-semibold">Contexto é chave:</strong> Sempre pense sobre o que os números e as chances significam na vida real.</li>
                             <li><strong class="font-semibold">Grupo todo ou uma parte?</strong> É importante saber se você está olhando para todos (população) ou só uma parte (amostra).</li>
                             <li><strong class="font-semibold">Média nem sempre é tudo:</strong> Se tiver números muito diferentes, a média pode não mostrar bem o "meio". Olhe também a mediana!</li>
                             <li><strong class="font-semibold">Desenhos ajudam a ver:</strong> Gráficos fazem os dados ficarem mais fáceis de entender.</li>
+                            <li><strong class="font-semibold">Probabilidade é uma medida:</strong> Ela nos diz o quão provável é que algo aconteça, de 0 (impossível) a 1 (certeza).</li>
                         </ul>
                     </div>
                 </div>
@@ -105,7 +115,7 @@
             <section id="practice-section" class="hidden">
                  <div class="bg-white p-6 rounded-lg shadow">
                     <h2 class="text-2xl font-bold mb-2 text-sky-700">Hora do Desafio!</h2>
-                    <p class="mb-6 content-text">Mostre que você aprendeu! Resolva as questões abaixo e veja como está seu conhecimento em estatística.</p>
+                    <p class="mb-6 content-text">Mostre que você aprendeu! Resolva as questões abaixo e veja como está seu conhecimento em estatística e probabilidade.</p>
 
                     <div id="quiz-container">
                         <p id="question-progress" class="text-center font-semibold text-slate-600 mb-4"></p>
@@ -163,7 +173,7 @@
                     content: 'Estatística é a parte da matemática que nos ajuda a coletar, organizar, analisar e entender informações (dados) sobre o mundo à nossa volta. Com ela, podemos descobrir coisas interessantes e tomar decisões melhores.<br><br><strong>Para que serve?</strong> É usada em muitas situações: para saber a opinião das pessoas, entender o desempenho de um time, ver como as notas da turma estão, e muito mais!'
                 },
                 {
-                    title: '2. Organizar e Entender os Dados',
+                    title: '2. Organizar e Entender os Dados (Estatística)',
                     content: 'A estatística nos ajuda de duas formas principais:<br><br><strong>a) Organizar e Descrever:</strong> A gente pega os dados, organiza em tabelas, faz gráficos e calcula coisas como a média para entender o que eles mostram. <br><em>Exemplo: Calcular a nota média da turma em uma prova.</em><br><br><strong>b) Tirar Conclusões (Inferir):</strong> Às vezes, estudamos só uma parte (chamada <strong>amostra</strong>) e usamos a estatística para ter uma ideia sobre o grupo todo (chamado <strong>população</strong>). <br><em>Exemplo: Fazer uma pesquisa com alguns alunos para saber qual o esporte preferido de todo o 9º ano.</em>'
                 },
                 {
@@ -181,6 +191,22 @@
                 {
                     title: '6. Como Mostrar os Dados? (Tabelas e Gráficos)',
                     content: 'Para entender melhor os dados, a gente organiza e mostra eles de formas visuais.<br><br><strong>Tabela de Frequência:</strong> Uma tabela que mostra quantas vezes cada valor ou categoria aparece.<br><em>Exemplo: Cor preferida de 20 alunos:</em><br><table class="styled-table"><thead><tr><th>Cor</th><th>Nº de Alunos (Frequência)</th></tr></thead><tbody><tr><td>Azul</td><td>8</td></tr><tr><td>Verde</td><td>5</td></tr><tr><td>Vermelho</td><td>4</td></tr><tr><td>Amarelo</td><td>3</td></tr></tbody></table><br><strong>Gráficos Comuns:</strong><br><ul><li><em>Gráfico de Barras:</em> Ótimo para comparar quantidades de diferentes categorias (variáveis qualitativas ou quantitativas discretas). Cada barra mostra uma quantidade.</li><li><em>Gráfico de Setores (Pizza):</em> Mostra as partes de um todo. Cada "fatia" representa uma porcentagem de uma categoria.</li><li><em>Gráfico de Linhas:</em> Bom para ver como algo muda com o tempo (ex: temperatura durante a semana).</li></ul>Visualizar os dados ajuda a entender a história que eles contam!'
+                },
+                {
+                    title: '7. O que é Probabilidade?',
+                    content: 'Probabilidade é uma forma de medir a <strong>chance</strong> de algo acontecer. Quando não temos certeza se um evento vai ocorrer, a probabilidade nos dá um número que diz o quão provável ele é.<br><br><em>Exemplos no dia a dia:</em><br><ul><li>Qual a chance de chover hoje?</li><li>Qual a chance de ganhar na loteria?</li><li>Qual a chance de tirar "cara" ao jogar uma moeda?</li></ul>A probabilidade nos ajuda a tomar decisões quando o futuro é incerto.'
+                },
+                {
+                    title: '8. Termos Importantes da Probabilidade',
+                    content: 'Para entender probabilidade, precisamos conhecer algumas palavras:<br><br><strong>Experimento Aleatório:</strong> É qualquer ação ou processo que pode ter resultados diferentes, mesmo que a gente repita do mesmo jeito. Não dá para prever o resultado com certeza.<br><em>Ex: Jogar um dado, sortear um nome, tirar uma carta de um baralho.</em><br><br><strong>Espaço Amostral (S):</strong> É o conjunto de <strong>todos</strong> os resultados possíveis de um experimento aleatório.<br><em>Ex: Ao jogar um dado de 6 faces, o espaço amostral é S = {1, 2, 3, 4, 5, 6}.</em><br><em>Ex: Ao jogar uma moeda, o espaço amostral é S = {Cara, Coroa}.</em><br><br><strong>Evento (E):</strong> É um resultado específico, ou um conjunto de resultados, que a gente tem interesse dentro do espaço amostral.<br><em>Ex: No lançamento de um dado, um evento pode ser "sair um número par". Nesse caso, o evento é E = {2, 4, 6}.</em><br><em>Ex: No lançamento de uma moeda, um evento pode ser "sair cara". E = {Cara}.</em>'
+                },
+                {
+                    title: '9. Calculando a Probabilidade Simples',
+                    content: 'Para calcular a probabilidade de um evento simples acontecer, usamos a seguinte ideia:<br><br><strong>P(E) = (Número de resultados favoráveis ao evento E) / (Número total de resultados possíveis no espaço amostral)</strong><br><br><em>Exemplo 1: Qual a probabilidade de sair "cara" ao jogar uma moeda?</em><br>Espaço amostral (S) = {Cara, Coroa}  (Total de 2 resultados possíveis)<br>Evento (E) = Sair "cara" = {Cara} (1 resultado favorável)<br>P(Cara) = 1/2<br><br><em>Exemplo 2: Qual a probabilidade de sair o número 5 ao jogar um dado de 6 faces?</em><br>Espaço amostral (S) = {1, 2, 3, 4, 5, 6} (Total de 6 resultados possíveis)<br>Evento (E) = Sair o número 5 = {5} (1 resultado favorável)<br>P(Sair 5) = 1/6<br><br><em>Exemplo 3: Qual a probabilidade de sair um número ímpar ao jogar um dado de 6 faces?</em><br>Espaço amostral (S) = {1, 2, 3, 4, 5, 6} (Total de 6 resultados possíveis)<br>Evento (E) = Sair um número ímpar = {1, 3, 5} (3 resultados favoráveis)<br>P(Sair ímpar) = 3/6 = 1/2 (simplificando a fração)'
+                },
+                {
+                    title: '10. A Escala da Probabilidade (De 0 a 1)',
+                    content: 'A probabilidade de um evento é sempre um número entre 0 e 1 (inclusive).<br><br><ul><li><strong>Probabilidade = 0:</strong> Significa que o evento é <strong>impossível</strong> de acontecer.<br><em>Ex: Tirar o número 7 em um dado comum de 6 faces. P(7) = 0/6 = 0.</em></li><br><li><strong>Probabilidade = 1:</strong> Significa que o evento é <strong>certo</strong> de acontecer.<br><em>Ex: Tirar um número menor que 7 em um dado comum de 6 faces. P(menor que 7) = 6/6 = 1.</em></li></ul><br>A probabilidade também pode ser expressa como:<br><ul><li><strong>Fração:</strong> Ex: 1/2, 3/4</li><li><strong>Número Decimal:</strong> Ex: 0.5 (que é o mesmo que 1/2), 0.75 (que é o mesmo que 3/4)</li><li><strong>Porcentagem:</strong> Ex: 50% (que é o mesmo que 0.5 ou 1/2), 75% (que é o mesmo que 0.75 ou 3/4)</li></ul>Quanto mais perto de 1 (ou 100%), mais provável é o evento. Quanto mais perto de 0, menos provável.'
                 }
             ];
 
@@ -194,7 +220,12 @@
                 { question: "Se queremos saber a altura de TODOS os alunos do 9º ano de uma escola, esse grupo TODO é chamado de:", answer: "População (o grupo todo)", options: ["Amostra (uma parte)", "Variável (a informação)", "População (o grupo todo)", "Dado (um valor)"], explanation: "População é o grupo completo que queremos estudar." },
                 { question: "As temperaturas mínimas durante 5 dias foram: 18°C, 20°C, 17°C, 22°C, 19°C. Qual a amplitude dessas temperaturas?", answer: "5°C", options: ["17°C", "22°C", "4°C", "5°C"], explanation: "Maior temperatura (22°C) - Menor temperatura (17°C) = 5°C." },
                 { question: "Se uma fábrica testa ALGUNS brinquedos para saber se TODOS estão bons, ela está usando informações de uma...", answer: "Amostra para entender a População", options: ["População para entender a Amostra", "Amostra para entender a População", "Variável para entender a Média", "Moda para entender a Mediana"], explanation: "Estudar uma parte (amostra) para tirar conclusões sobre o todo (população) é uma ideia central da estatística." },
-                { question: "Se as notas da Turma A foram <span class='data-set'>7, 8, 7, 8</span> e da Turma B foram <span class='data-set'>4, 6, 9, 11</span>. Qual turma teve notas mais 'espalhadas'?", answer: "Turma B", options: ["Turma A", "Turma B", "As duas igual", "Não dá para saber"], explanation: "As notas da Turma B variam mais (de 4 a 11), enquanto as da Turma A estão mais próximas (entre 7 e 8)." }
+                { question: "Se as notas da Turma A foram <span class='data-set'>7, 8, 7, 8</span> e da Turma B foram <span class='data-set'>4, 6, 9, 11</span>. Qual turma teve notas mais 'espalhadas'?", answer: "Turma B", options: ["Turma A", "Turma B", "As duas igual", "Não dá para saber"], explanation: "As notas da Turma B variam mais (de 4 a 11), enquanto as da Turma A estão mais próximas (entre 7 e 8)." },
+                { question: "Ao jogar uma moeda comum, qual a probabilidade de sair 'coroa'?", answer: "1/2 (ou 50%)", options: ["1/4 (ou 25%)", "1/2 (ou 50%)", "1 (ou 100%)", "0 (ou 0%)"], explanation: "Uma moeda tem 2 lados (cara, coroa). Sair 'coroa' é 1 resultado favorável em 2 possíveis. P = 1/2." },
+                { question: "Em um dado de 6 faces numeradas de 1 a 6, qual a probabilidade de sair um número maior que 4?", answer: "2/6 (ou 1/3)", options: ["1/6", "2/6 (ou 1/3)", "3/6 (ou 1/2)", "4/6 (ou 2/3)"], explanation: "Os números maiores que 4 são 5 e 6 (2 resultados favoráveis). O total de resultados é 6. P = 2/6, que simplifica para 1/3." },
+                { question: "Numa sacola com 3 bolas vermelhas e 2 bolas azuis, todas do mesmo tamanho, qual a probabilidade de tirar uma bola azul sem olhar?", answer: "2/5", options: ["3/5", "2/5", "1/2", "2/3"], explanation: "Há 2 bolas azuis (favoráveis) e um total de 5 bolas (3 vermelhas + 2 azuis). P(azul) = 2/5." },
+                { question: "Se um evento é impossível de acontecer, sua probabilidade é:", answer: "0 (ou 0%)", options: ["1 (ou 100%)", "0,5 (ou 50%)", "0 (ou 0%)", "Depende do evento"], explanation: "Um evento impossível, como tirar um 7 num dado de 6 faces, tem probabilidade zero." },
+                { question: "Qual o espaço amostral (todos os resultados possíveis) ao lançar um dado comum de 6 faces?", answer: "{1, 2, 3, 4, 5, 6}", options: ["{1, 3, 5}", "{Pares, Ímpares}", "{1, 2, 3, 4, 5, 6}", "{Cara, Coroa}"], explanation: "O espaço amostral são todos os resultados que podem acontecer: os números de 1 a 6." }
             ];
             
             let currentQuestionIndex = 0;
@@ -284,7 +315,6 @@
                 let currentOptions = [...questionData.options];
                 
                 if (!currentOptions.includes(questionData.answer)) {
-                    // Ensure the correct answer is always an option, replace a random one if needed.
                     const randomIndex = Math.floor(Math.random() * currentOptions.length);
                     currentOptions[randomIndex] = questionData.answer; 
                 }
@@ -318,7 +348,7 @@
 
                 buttons.forEach(button => {
                     button.disabled = true;
-                    if (button.innerHTML === correctAnswer) { // Use innerHTML for comparison due to potential <span>
+                    if (button.innerHTML === correctAnswer) { 
                         button.classList.add('correct-answer');
                     } else if (button.innerHTML === selectedOption && !isCorrect) {
                         button.classList.add('wrong-answer');
@@ -353,3 +383,4 @@
     </script>
 </body>
 </html>
+
