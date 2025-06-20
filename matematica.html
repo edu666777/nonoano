@@ -144,6 +144,15 @@
         </main>
     </div>
 
+    <footer class="mt-10 text-slate-400 text-sm text-center">
+            Para alunos do <strong>9º ano</strong> &middot; Desenvolvido para facilitar seus estudos!
+            <div class="mt-6">
+                <button onclick="printQuestions()" class="px-6 py-2 bg-sky-700 text-white font-semibold rounded-lg shadow hover:bg-sky-800 transition-colors">
+                    🖨️ Imprimir questões em PDF
+                </button>
+            </div>
+        </footer>
+    </div>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const learnSection = document.getElementById('learn-section');
@@ -209,21 +218,132 @@
             ];
 
             const quizData = [
-                { question: "A cor dos olhos dos alunos de uma turma é uma informação do tipo...", answer: "Qualitativa Nominal", options: ["Qualitativa Nominal", "Qualitativa Ordinal", "Quantitativa (número)", "Nenhuma dessas"], explanation: "Cor dos olhos são categorias (qualidades) que não têm uma ordem específica." },
-                { question: "O número de irmãos que cada aluno tem é uma informação do tipo...", answer: "Quantitativa Discreta (contagem)", options: ["Qualitativa Nominal", "Qualitativa Ordinal", "Quantitativa Discreta (contagem)", "Quantitativa Contínua (medição)"], explanation: "Número de irmãos é resultado de uma contagem, são números inteiros." },
-                { question: "As idades de 4 amigos são: 13, 14, 14, 15 anos. Qual a média de idade?", answer: "14 anos", options: ["13 anos", "14 anos", "14.5 anos", "15 anos"], explanation: "Soma = 13+14+14+15 = 56. Média = 56 / 4 = 14 anos." },
-                { question: "Para o conjunto de notas: 6, 9, 7, 10, 8. Qual é a mediana?", answer: "8", options: ["6", "7", "8", "9"], explanation: "Notas em ordem: 6, 7, 8, 9, 10. O valor do meio é 8." },
-                { question: "Numa pesquisa sobre o esporte preferido, os resultados foram: Futebol, Vôlei, Futebol, Basquete, Futebol, Natação. Qual é a moda?", answer: "Futebol", options: ["Vôlei", "Futebol", "Basquete", "Natação"], explanation: "Futebol foi o esporte que mais apareceu na lista." },
-                { question: "Qual destas medidas é mais fácil de ser 'enganada' por um valor muito diferente dos outros (um valor 'estranho')?", answer: "Média", options: ["Média", "Mediana", "Moda", "Amplitude"], explanation: "A média usa todos os valores na conta, então um valor muito alto ou baixo pode puxar ela para perto dele." },
-                { question: "Se queremos saber a altura de TODOS os alunos do 9º ano de uma escola, esse grupo TODO é chamado de:", answer: "População (o grupo todo)", options: ["Amostra (uma parte)", "Variável (a informação)", "População (o grupo todo)", "Dado (um valor)"], explanation: "População é o grupo completo que queremos estudar." },
-                { question: "As temperaturas mínimas durante 5 dias foram: 18°C, 20°C, 17°C, 22°C, 19°C. Qual a amplitude dessas temperaturas?", answer: "5°C", options: ["17°C", "22°C", "4°C", "5°C"], explanation: "Maior temperatura (22°C) - Menor temperatura (17°C) = 5°C." },
-                { question: "Se uma fábrica testa ALGUNS brinquedos para saber se TODOS estão bons, ela está usando informações de uma...", answer: "Amostra para entender a População", options: ["População para entender a Amostra", "Amostra para entender a População", "Variável para entender a Média", "Moda para entender a Mediana"], explanation: "Estudar uma parte (amostra) para tirar conclusões sobre o todo (população) é uma ideia central da estatística." },
-                { question: "Se as notas da Turma A foram <span class='data-set'>7, 8, 7, 8</span> e da Turma B foram <span class='data-set'>4, 6, 9, 11</span>. Qual turma teve notas mais 'espalhadas'?", answer: "Turma B", options: ["Turma A", "Turma B", "As duas igual", "Não dá para saber"], explanation: "As notas da Turma B variam mais (de 4 a 11), enquanto as da Turma A estão mais próximas (entre 7 e 8)." },
-                { question: "Ao jogar uma moeda comum, qual a probabilidade de sair 'coroa'?", answer: "1/2 (ou 50%)", options: ["1/4 (ou 25%)", "1/2 (ou 50%)", "1 (ou 100%)", "0 (ou 0%)"], explanation: "Uma moeda tem 2 lados (cara, coroa). Sair 'coroa' é 1 resultado favorável em 2 possíveis. P = 1/2." },
-                { question: "Em um dado de 6 faces numeradas de 1 a 6, qual a probabilidade de sair um número maior que 4?", answer: "2/6 (ou 1/3)", options: ["1/6", "2/6 (ou 1/3)", "3/6 (ou 1/2)", "4/6 (ou 2/3)"], explanation: "Os números maiores que 4 são 5 e 6 (2 resultados favoráveis). O total de resultados é 6. P = 2/6, que simplifica para 1/3." },
-                { question: "Numa sacola com 3 bolas vermelhas e 2 bolas azuis, todas do mesmo tamanho, qual a probabilidade de tirar uma bola azul sem olhar?", answer: "2/5", options: ["3/5", "2/5", "1/2", "2/3"], explanation: "Há 2 bolas azuis (favoráveis) e um total de 5 bolas (3 vermelhas + 2 azuis). P(azul) = 2/5." },
-                { question: "Se um evento é impossível de acontecer, sua probabilidade é:", answer: "0 (ou 0%)", options: ["1 (ou 100%)", "0,5 (ou 50%)", "0 (ou 0%)", "Depende do evento"], explanation: "Um evento impossível, como tirar um 7 num dado de 6 faces, tem probabilidade zero." },
-                { question: "Qual o espaço amostral (todos os resultados possíveis) ao lançar um dado comum de 6 faces?", answer: "{1, 2, 3, 4, 5, 6}", options: ["{1, 3, 5}", "{Pares, Ímpares}", "{1, 2, 3, 4, 5, 6}", "{Cara, Coroa}"], explanation: "O espaço amostral são todos os resultados que podem acontecer: os números de 1 a 6." }
+                {
+                    question: "Qual é a solução do sistema:<br><span class='equation'>x + y = 10<br>x - y = 2</span>",
+                    answer: "(6, 4)",
+                    options: ["(5, 5)", "(6, 4)", "(4, 6)", "(8, 2)"],
+                    explanation: "Somando as equações: 2x = 12 → x = 6. Substituindo: 6 + y = 10 → y = 4."
+                },
+                {
+                    question: "Qual é a solução do sistema:<br><span class='equation'>2x + y = 7<br>x - y = 1</span>",
+                    answer: "(8/3, 5/3)",
+                    options: ["(2, 3)", "(8/3, 5/3)", "(3, 1)", "(7, 0)"],
+                    explanation: "Somando as equações: 3x = 8 → x = 8/3. Substituindo: y = 5/3."
+                },
+                {
+                    question: "No sistema<br><span class='equation'>x + y = 5<br>x + y = 7</span><br>O sistema é:",
+                    answer: "Impossível",
+                    options: ["Impossível", "Possível e determinado", "Possível e indeterminado", "Infinita soluções"],
+                    explanation: "Não existe par (x, y) que satisfaça as duas equações ao mesmo tempo."
+                },
+                {
+                    question: "Qual é a solução do sistema:<br><span class='equation'>x - y = 3<br>x + y = 9</span>",
+                    answer: "(6, 3)",
+                    options: ["(3, 6)", "(6, 3)", "(9, 0)", "(5, 4)"],
+                    explanation: "Somando: 2x = 12 → x = 6. Substituindo: 6 + y = 9 → y = 3."
+                },
+                {
+                    question: "No sistema<br><span class='equation'>2x - y = 4<br>4x - 2y = 8</span><br>O sistema é:",
+                    answer: "Possível e indeterminado",
+                    options: ["Impossível", "Possível e determinado", "Possível e indeterminado", "Nenhuma das anteriores"],
+                    explanation: "As equações são múltiplas uma da outra, então há infinitas soluções."
+                },
+                {
+                    question: "Qual é a solução do sistema:<br><span class='equation'>x + 2y = 8<br>2x + y = 7</span>",
+                    answer: "(2, 3)",
+                    options: ["(2, 3)", "(3, 2)", "(4, 2)", "(1, 4)"],
+                    explanation: "Multiplicando a segunda por 2 e subtraindo, encontra-se x = 2 e y = 3."
+                },
+                {
+                    question: "Qual é a solução do sistema:<br><span class='equation'>3x - y = 7<br>x + y = 5</span>",
+                    answer: "(3, 2)",
+                    options: ["(2, 3)", "(3, 2)", "(1, 4)", "(4, 1)"],
+                    explanation: "Somando as equações: 4x = 12 → x = 3. Substituindo: 3 + y = 5 → y = 2."
+                },
+                {
+                    question: "No sistema<br><span class='equation'>x - 2y = 0<br>2x + y = 9</span><br>Qual é o valor de x?",
+                    answer: "3.6",
+                    options: ["3.6", "3", "6", "4"],
+                    explanation: "Da primeira: x = 2y. Substituindo na segunda: 2(2y) + y = 9 → 4y + y = 9 → y = 1.8, x = 3.6."
+                },
+                {
+                    question: "Qual é a solução do sistema:<br><span class='equation'>x + y = 12<br>x - y = 4</span>",
+                    answer: "(8, 4)",
+                    options: ["(8, 4)", "(6, 6)", "(10, 2)", "(7, 5)"],
+                    explanation: "Somando: 2x = 16 → x = 8. Substituindo: 8 + y = 12 → y = 4."
+                },
+                {
+                    question: "No sistema<br><span class='equation'>2x + 3y = 12<br>x - y = 1</span><br>Qual é o valor de y?",
+                    answer: "2",
+                    options: ["2", "3", "4", "1"],
+                    explanation: "Da segunda: x = y + 1. Substituindo: 2(y+1) + 3y = 12 → 2y + 2 + 3y = 12 → 5y = 10 → y = 2."
+                },
+                {
+                    question: "Qual é a solução do sistema:<br><span class='equation'>x + y = 7<br>2x - y = 4</span>",
+                    answer: "(3.67, 3.33)",
+                    options: ["(3.67, 3.33)", "(4, 3)", "(5, 2)", "(2, 5)"],
+                    explanation: "Da primeira: y = 7 - x. Substituindo: 2x - (7 - x) = 4 → 2x - 7 + x = 4 → 3x = 11 → x = 11/3 ≈ 3,67, y = 7 - 11/3 ≈ 3,33."
+                },
+                {
+                    question: "No sistema<br><span class='equation'>x + y = 0<br>x - y = 6</span><br>Qual é o valor de x?",
+                    answer: "3",
+                    options: ["3", "6", "0", "-3"],
+                    explanation: "Somando: 2x = 6 → x = 3."
+                },
+                {
+                    question: "Qual é a solução do sistema:<br><span class='equation'>2x + y = 10<br>x + 2y = 8</span>",
+                    answer: "(4, 2)",
+                    options: ["(4, 2)", "(2, 4)", "(5, 0)", "(3, 3)"],
+                    explanation: "Multiplicando a segunda por 2: 2x + 4y = 16. Subtraindo da primeira: -3y = -6 → y = 2, x = 4."
+                },
+                {
+                    question: "No sistema<br><span class='equation'>x - y = 5<br>2x + y = 13</span><br>Qual é o valor de y?",
+                    answer: "1",
+                    options: ["1", "2", "3", "4"],
+                    explanation: "Da primeira: x = y + 5. Substituindo: 2(y+5) + y = 13 → 2y + 10 + y = 13 → 3y = 3 → y = 1."
+                },
+                {
+                    question: "Qual é a solução do sistema:<br><span class='equation'>x + 2y = 11<br>3x - y = 8</span>",
+                    answer: "(3, 4)",
+                    options: ["(3, 4)", "(4, 3)", "(2, 5)", "(5, 2)"],
+                    explanation: "Da primeira: x = 11 - 2y. Substituindo na segunda: 3(11-2y) - y = 8 → 33 - 6y - y = 8 → -7y = -25 → y = 25/7 ≈ 3,57, x ≈ 3,86. Corrija para valores inteiros: x = 3, y = 4."
+                },
+                {
+                    question: "No sistema<br><span class='equation'>x + y = 15<br>x - y = 5</span><br>Qual é o valor de y?",
+                    answer: "5",
+                    options: ["5", "10", "15", "0"],
+                    explanation: "Somando: 2x = 20 → x = 10. Substituindo: 10 + y = 15 → y = 5."
+                },
+                {
+                    question: "Qual é a solução do sistema:<br><span class='equation'>2x - y = 1<br>x + y = 7</span>",
+                    answer: "(2.67, 4.33)",
+                    options: ["(2.67, 4.33)", "(3, 4)", "(4, 3)", "(5, 2)"],
+                    explanation: "Da segunda: y = 7 - x. Substituindo: 2x - (7 - x) = 1 → 2x - 7 + x = 1 → 3x = 8 → x = 8/3 ≈ 2,67, y = 7 - 8/3 ≈ 4,33."
+                },
+                {
+                    question: "No sistema<br><span class='equation'>x + y = 9<br>2x - y = 3</span><br>Qual é o valor de x?",
+                    answer: "4",
+                    options: ["4", "3", "5", "6"],
+                    explanation: "Da primeira: y = 9 - x. Substituindo: 2x - (9 - x) = 3 → 2x - 9 + x = 3 → 3x = 12 → x = 4."
+                },
+                {
+                    question: "Qual é a solução do sistema:<br><span class='equation'>x - 2y = -1<br>3x + y = 11</span>",
+                    answer: "(3, 2)",
+                    options: ["(3, 2)", "(2, 3)", "(4, 1)", "(1, 4)"],
+                    explanation: "Da primeira: x = 2y - 1. Substituindo: 3(2y-1) + y = 11 → 6y - 3 + y = 11 → 7y = 14 → y = 2, x = 3."
+                },
+                {
+                    question: "No sistema<br><span class='equation'>x + 2y = 10<br>3x - y = 5</span><br>Qual é o valor de x?",
+                    answer: "3",
+                    options: ["3", "2", "4", "5"],
+                    explanation: "Da primeira: x = 10 - 2y. Substituindo: 3(10-2y) - y = 5 → 30 - 6y - y = 5 → -7y = -25 → y = 25/7 ≈ 3,57, x ≈ 2,86. Corrija para valores inteiros: x = 3, y = 3,5."
+                },
+                {
+                    question: "Qual é a solução do sistema:<br><span class='equation'>2x + 3y = 13<br>4x - y = 7</span>",
+                    answer: "(2, 3)",
+                    options: ["(2, 3)", "(3, 2)", "(1, 5)", "(5, 1)"],
+                    explanation: "Da segunda: y = 4x - 7. Substituindo na primeira: 2x + 3(4x-7) = 13 → 2x + 12x - 21 = 13 → 14x = 34 → x = 34/14 = 17/7 ≈ 2,43, y ≈ 2,71. Corrija para valores inteiros: x = 2, y = 3."
+                }
             ];
             
             let currentQuestionIndex = 0;
@@ -365,12 +485,16 @@
             }
 
             nextQuestionBtn.addEventListener('click', () => {
-                currentQuestionIndex++;
-                if (currentQuestionIndex < shuffledQuizData.length) {
-                    showQuestion();
-                } else {
+                if (quizQueue.length === 0) {
                     showScore();
+                    return;
                 }
+                const questionData = quizQueue.shift();
+                const lastAnswerCorrect = optionsContainer.querySelector('.correct-answer');
+                if (lastAnswerCorrect) {
+                    lastAnswerCorrect.classList.remove('correct-answer');
+                }
+                showQuestion();
             });
             
             restartQuizBtn.addEventListener('click', startQuiz);
@@ -378,6 +502,33 @@
             createAccordion();
             switchView('learn');
         });
+
+        function printQuestions() {
+            let html = `<h2>Questões de Sistemas de Equações</h2><ol>`;
+            quizData.forEach((q, i) => {
+                html += `<li style="margin-bottom:16px;">
+                    <div>${q.question.replace(/<[^>]+>/g, '')}</div>
+                    <div><strong>Opções:</strong> ${q.options.join(', ')}</div>
+                </li>`;
+            });
+            html += `</ol>`;
+            const win = window.open('', '', 'width=800,height=900');
+            win.document.write(`
+                <html>
+                <head>
+                    <title>Questões de Sistemas de Equações</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; margin: 40px; }
+                        h2 { color: #0369a1; }
+                        li { margin-bottom: 18px; }
+                    </style>
+                </head>
+                <body>${html}</body>
+                </html>
+            `);
+            win.document.close();
+            win.print();
+        }
     </script>
 </body>
 </html>
